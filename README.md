@@ -27,10 +27,16 @@ To start Thumbor as a Docker Container on Windows, just enter the command below 
 [Coffee berries filtered (brightness 50 | contrast 50)](http://localhost:8888/unsafe/filters:brightness(50):contrast(50)/https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Coffee_berries_1.jpg/1200px-Coffee_berries_1.jpg)
 
 ## Meta
+
 [Coffee berries endpoint returns metadata](http://localhost:8888/unsafe/meta/300x200/https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Coffee_berries_1.jpg/1200px-Coffee_berries_1.jpg)
 
-## Test 300px by 200px
+## Smart Image Detection
 
-[Person image](http://localhost:8888/unsafe/300x200/smart/https://www.euram.eu/JoshuaTree/Content/pictures/Bart.jpg)
+first setup image detection in container
+
+`docker run -p 8888:8000 -e DETECTORS = ['thumbor.detectors.face_detector','thumbor.detectors.feature_detector'] apsl/thumbor`
+
+[Person image without image detection](http://localhost:8888/unsafe/300x200/www.euram.eu/JoshuaTree/Content/pictures/Bart.jpg)
+[Person image with image detection](http://localhost:8888/unsafe/300x200/smart/www.euram.eu/JoshuaTree/Content/pictures/Bart.jpg)
 
 
