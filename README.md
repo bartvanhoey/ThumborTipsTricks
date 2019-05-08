@@ -34,7 +34,7 @@ To start Thumbor as a Docker Container on Windows, just enter the command below 
 
 first setup image detection in container
 
-`docker run -p 8888:8000 -e DETECTORS = ['thumbor.detectors.face_detector','thumbor.detectors.feature_detector'] apsl/thumbor`
+`docker run -p 8888:8000 -e DETECTORS=['thumbor.detectors.face_detector','thumbor.detectors.feature_detector'] apsl/thumbor`
 
 [Person image without image detection](http://localhost:8888/unsafe/300x200/www.euram.eu/JoshuaTree/Content/pictures/Bart.jpg)
 [Person image with image detection](http://localhost:8888/unsafe/300x200/smart/www.euram.eu/JoshuaTree/Content/pictures/Bart.jpg)
